@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.91" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints valignment="TOP" />
+   </rowConstraints>
+   <children>
+      <TabPane prefHeight="600.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="首页">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="571.0" prefWidth="1195.0">
+                     <children>
+                        <SplitPane dividerPositions="0.333333" layoutX="-4.0" layoutY="-2.0" prefHeight="573.0" prefWidth="1207.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="566.0" prefWidth="231.0">
+                                 <children>
+                                    <Button fx:id="btn_test" layoutX="155.0" layoutY="161.0" mnemonicParsing="false" onAction="#handleBtnTestAction1" text="开始测试">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                    <Label layoutX="23.0" layoutY="14.0" text="测试短信总条数：">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
+                                    <Label layoutX="23.0" layoutY="38.0" text="正常-垃圾短信比例：">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
+                                    <Label layoutX="23.0" layoutY="62.0" text="测试使用的模型：">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
+                                    <CheckBox fx:id="cb_1" layoutX="54.0" layoutY="88.0" mnemonicParsing="false" text="多项式贝叶斯模型">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <CheckBox fx:id="cb_3" layoutX="54.0" layoutY="131.0" mnemonicParsing="false" text="Knn模型">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <CheckBox fx:id="cb_2" layoutX="54.0" layoutY="109.0" mnemonicParsing="false" text="贝努力贝叶斯模型">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <TextField fx:id="tf_sum" layoutX="210.0" layoutY="12.0" prefHeight="23.0" prefWidth="151.0" />
+                                    <TextField fx:id="tf_rate" layoutX="210.0" layoutY="37.0" prefHeight="23.0" prefWidth="150.0" />
+                                    <Line endX="300.0" layoutX="103.0" layoutY="213.0" startX="-100.0" />
+                                    <BarChart fx:id="barChart" layoutX="-9.0" layoutY="213.0" legendSide="TOP" prefHeight="358.0" prefWidth="409.0" title="结果">
+                                      <xAxis>
+                                        <CategoryAxis label="模型" prefHeight="41.0" prefWidth="332.0" side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis label="\%" side="LEFT" upperBound="90.0" />
+                                      </yAxis>
+                                    </BarChart>
+                                 </children></AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="571.0" prefWidth="788.0">
+                                 <children>
+                                    <ListView fx:id="lv_1" layoutX="-1.0" layoutY="32.0" prefHeight="160.0" prefWidth="801.0" />
+                                    <ListView fx:id="lv_2" layoutX="-1.0" layoutY="223.0" prefHeight="160.0" prefWidth="800.0" />
+                                    <ListView fx:id="lv_3" layoutY="413.0" prefHeight="160.0" prefWidth="798.0" />
+                                    <Label layoutX="344.0" layoutY="4.0" text="多项式判错分析">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="344.0" layoutY="196.0" text="贝努力判错分析">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="352.0" layoutY="387.0" text="Knn判错分析">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children></AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="个性化">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.33333" layoutY="-1.0" prefHeight="573.0" prefWidth="1200.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Line endX="300.0" layoutX="100.0" layoutY="234.0" startX="-100.0" />
+                                    <LineChart fx:id="lineChart" layoutX="-1.0" layoutY="235.0" prefHeight="336.0" prefWidth="396.0" title="垃圾短信动态数目图">
+                                      <xAxis>
+                                        <CategoryAxis label="次数" side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </LineChart>
+                                    <CheckBox fx:id="cb_4" layoutX="42.0" layoutY="79.0" mnemonicParsing="false" text="贷款诈骗">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <Label layoutX="25.0" layoutY="22.0" text="测试短信总数">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="25.0" layoutY="49.0" text="可接受类别：">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox fx:id="cb_5" layoutX="42.0" layoutY="101.0" mnemonicParsing="false" text="二手车推销">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <CheckBox fx:id="cb_6" layoutX="42.0" layoutY="125.0" mnemonicParsing="false" text="房地产推销">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <CheckBox fx:id="cb_7" layoutX="42.0" layoutY="147.0" mnemonicParsing="false" text="服务业广告">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <CheckBox fx:id="cb_8" layoutX="42.0" layoutY="171.0" mnemonicParsing="false" text="转账诈骗">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <CheckBox fx:id="cb_9" layoutX="42.0" layoutY="193.0" mnemonicParsing="false" text="招聘信息">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <TextField fx:id="tf_sumSpam" layoutX="197.0" layoutY="22.0" prefHeight="23.0" prefWidth="150.0" />
+                                    <Button layoutX="236.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleBtnClearAction" text="清  空">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="227.0" layoutY="184.0" mnemonicParsing="false" onAction="#handleBtnTestAction2" text="开始测试">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Label layoutX="362.0" layoutY="2.0" text="分类分析">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="lv_4" layoutY="26.0" prefHeight="545.0" prefWidth="796.0" />
+                                 </children></AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="关于">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="451.0" layoutY="184.0" prefHeight="203.0" prefWidth="299.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="20.0" text="About" textOverrun="CLIP">
+                                 <font>
+                                    <Font name="System Bold Italic" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="46.0" layoutY="62.0" text="Name :               演示系统">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="45.0" layoutY="119.0" text="Time :             2016/12/22">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="45.0" layoutY="91.0" text="Author :                XiaoJie">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children></AnchorPane>
+                </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</GridPane>

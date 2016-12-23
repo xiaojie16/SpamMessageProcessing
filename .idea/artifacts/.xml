@@ -1,0 +1,24 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="演示系统">
+    <output-path>$PROJECT_DIR$/out/artifacts/</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="sample.Main" />
+        <option name="description" value="" />
+        <option name="height" value="800" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="演示系统" />
+        <option name="vendor" value="" />
+        <option name="version" value="1.0" />
+        <option name="width" value="1200" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name=".jar">
+        <element id="module-output" name="演示系统" />
+      </element>
+      <element id="library" level="project" name="jna-4.0.0" />
+      <element id="library" level="project" name="mysql-connector-java-5.1.38-bin" />
+    </root>
+  </artifact>
+</component>
